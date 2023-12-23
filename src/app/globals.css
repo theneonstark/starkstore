@@ -25,3 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.text-transparent{
+  background: linear-gradient(to right,darkblue 70%,violet);
+  -webkit-text-stroke: transparent;
+  -webkit-background-clip: text;
+}
