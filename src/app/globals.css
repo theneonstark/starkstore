@@ -30,3 +30,8 @@ body {
   -webkit-text-stroke: transparent;
   -webkit-background-clip: text;
 }
+
+.menu_content ul li {
+  margin-bottom: 0.5rem;
+  font-weight: lighter;
+}
