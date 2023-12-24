@@ -104,7 +104,7 @@ export default function RootLayout({
             </div>
           </nav>
           <Link href={"/"} className="text-3xl -ml-20">
-            Gaming
+            Immortal
           </Link>
           <div className="flex">
             <Link className="px-9" href={"/profile"}>
