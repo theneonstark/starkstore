@@ -19,12 +19,12 @@ export default function LandPage() {
                 <Link href={""} className="border border-solid border-inherit px-10 py-3 rounded-bl-3xl rounded-tr-3xl  mx-4 hover:bg-gradient-to-r from-cyan-600 to-violet-700">Show Collections</Link>
                 </div>
             </main>
-            {/* <section>
-                <div className="heading">
+            <section>
+                <div className="heading flex justify-between mx-20">
                     <h1>Bestsellers of the week</h1>
                     <Link href={""}>Show Prod</Link>
                 </div>
-            </section> */}
+            </section>
         </section>
         
     )
