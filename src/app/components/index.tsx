@@ -1,16 +1,40 @@
 "use client"
 import Link from "next/link"
-import Hello from "../index"
-function run() {
-    const ab = document.querySelector('nav');
-    console.log(ab);
-}
+import { useEffect } from "react"
 export default  function Page(){
-    return(
+useEffect(()=>{
+    const run = () => {
+      let show  = 0;
+      const nav_container = document.querySelectorAll('nav > div');
+      nav_container.forEach((elem,indx)=>{
+        elem.addEventListener('click',(e)=>{
+          const dropdown = document.querySelectorAll('nav > div div');
+          dropdown.forEach((elemy,idx)=>{ 
+            elemy.classList.add('visible');
+            elemy.classList.remove('invisible');
+            show++;
+            if(show >= 2){
+                  elemy.classList.add('invisible');
+                  elemy.classList.remove('visible');
+                  show = 0;
+                }
+                console.log(show);
+                
+            })
+          // console.log(dropdown)
+          let a = e.target;
+          // console.log(a)
+
+        });
+      })
+    }
+    run();
+  })
+  return(
         <main>
             <header className="relative top-0 left-0 h-20 flex justify-between  items-center px-20 font-bold text-sm">
           <nav className="flex">
-            <div className="mx-4 flex items-center" onClick={run} >
+            <div className="mx-4 flex items-center cursor-pointer">
               Gaming Accessories
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -25,40 +49,40 @@ export default  function Page(){
                   d="m19.5 8.25-7.5 7.5-7.5-7.5"
                 />
               </svg>
+              <div className="menu_content flex w-full h-0 left-0 top-full invisible justify-between px-24 py-6 bg-white absolute text-red-600">
+              <ul>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+              </ul>
+              <ul>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+              </ul>
+              <ul>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+              </ul>
+              <ul>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+              </ul>
             </div>
-            <div className="menu_content flex w-full h-0 invisible left-0 top-full justify-between px-24 py-6 bg-white absolute text-red-600">
-              <ul>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-              </ul>
-              <ul>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-              </ul>
-              <ul>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-              </ul>
-              <ul>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-              </ul>
             </div>
             <div className="mx-4 flex items-center">
               Pages
@@ -75,6 +99,7 @@ export default  function Page(){
                   d="m19.5 8.25-7.5 7.5-7.5-7.5"
                 />
               </svg>
+              
             </div>
             <div className="mx-4 flex items-center">
               Blog
